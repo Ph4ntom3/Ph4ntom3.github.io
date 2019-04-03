@@ -41,8 +41,6 @@ Promise.all([
         server.adapter(Adapter(cb => cb(err, db.db("fritz-friends"))));
     });
 
-    server.query()
-
     http.createServer(server.handle.bind(server)).listen(config.odata.port);
 
     console.log(`started server on port ${config.odata.port}`);
