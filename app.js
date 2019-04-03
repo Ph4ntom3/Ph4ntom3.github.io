@@ -43,7 +43,7 @@ Promise.all([
 
     http.createServer(server.handle.bind(server)).listen(PORT);
 
-    console.log(`started server on port ${config.odata.port}`);
+    console.log(`started server on port ${port}`);
 }).catch(err => {
     console.log(`Could not read config files:\n\n${err.name}:\n${err.message}\n${err.stack}`);
 })
