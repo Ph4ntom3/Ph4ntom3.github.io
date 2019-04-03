@@ -29,7 +29,7 @@ Promise.all([
 
     const PORT = process.env.PORT || config.odata.port
 
-    const server = ODataServer("https://fritz-friends-backend.herokuapp.com/:" + PORT)
+    const server = ODataServer("https://fritz-friends-backend.herokuapp.com:" + PORT)
     .model(model)
     .cors("*")
 
