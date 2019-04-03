@@ -1,0 +1,35 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog
+        id="dietDialog"
+        title="{i18n>dietDialogTitle}" 
+        class="sapUiContentPadding">
+        <content>
+            <Slider
+            id="numDays"
+            min="1"
+            max="40"
+            value="{view>/numDays}"
+            width="100%"
+            liveChange=".onNumDaysChange"/>
+            <ObjectNumber
+                id="numDaysDisplay"
+                emphasized="false"
+                number="{view>/numDays}"
+                unit=" {i18n>days}"
+                textAlign="Center"/>
+        </content>
+        <beginButton>
+            <Button
+                text="{i18n>popupBegin}"
+                type="Emphasized"
+                press=".onDiet"/>
+        </beginButton>
+        <endButton>
+            <Button
+                text="{i18n>popupClose}"
+                press=".onDietDialogClose"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

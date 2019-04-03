@@ -1,0 +1,67 @@
+{
+    "_id": "fritz_friends",
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "fritz_friends",
+        "type": "application",
+        "i18n": "./i18n/i18n.properties",
+        "title": "fritz & friends",
+        "description": "an application to digitalize fritz limo sale",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "dataSources": {
+            "FritzFriendsSrv": {
+                "uri": "/sap/opu/odata/sap/Z_ROETHER_FRITZ_FRIENDS_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "fritz_friends.view.app",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.60.5",
+            "libs": {
+                "sap.m": {}
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "fritz_friends.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "FritzFriendsSrv",
+                "settings": {
+                    "defaultBindingMode": "OneWay"
+                }
+            }
+
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        }
+    }
+}

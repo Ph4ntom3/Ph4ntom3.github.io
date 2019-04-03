@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Futura Bold";
+    src: url("../res/fonts/futura-bold-modified.otf") format("opentype");
+}
+
+body {
+    overflow: hidden;
+}
+
+.buttonContainer {
+    max-height: 180px;
+    min-height: 130px;
+}
+
+.fritz-font {
+   font-family: "Futura Bold";
+}
+
+.pageTitle {
+    width: 100%;
+    font-size: 7rem; 
+}
+
+.button {
+    max-width: 400px;
+}
+
+@media(max-height: 600px) {
+    .pageTitle {
+        font-size: 4.3rem;
+        margin-top: 10px;
+    }
+}
+
+@media(max-width: 500px) {
+    .pageTitle {
+        font-size: 3.3rem;
+    }
+}

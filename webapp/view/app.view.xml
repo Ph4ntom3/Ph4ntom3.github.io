@@ -1,0 +1,46 @@
+<mvc:View
+	controllerName="fritz_friends.controller.app"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<App id="app">
+		<Page showHeader="false">
+			<HBox height="10%" justifyContent="SpaceBetween">
+				<Button 
+					text="{i18n>diet}" 
+					press=".onDietDialogOpen" 
+					class="sapUiMediumMarginBegin sapUiTinyMarginTop"
+					type="Ghost"/>
+				<Text text="{Uname}" class="sapUiMediumMarginEnd sapUiSmallMarginTop"/>
+			</HBox>
+			<VBox height="70%" justifyContent="SpaceAround" alignItems="Center" class="sapUiMediumPaddingBottom">
+				<VBox justifyContent="Center" alignItems="Center">
+					<Text class="fritz-font pageTitle" textAlign="Center" text="fritz &amp; friends"/>
+				</VBox>
+				<VBox height="50%" justifyContent="SpaceBetween" alignItems="Center" class="buttonContainer">
+					<NumericContent
+						icon="sap-icon://money-bills"
+						value="{Balance}"
+						valueColor="{path:'Balance', formatter:'.formatBalanceColor'}"
+						scale="€"
+						withMargin="false"
+						width="auto"
+						truncateValueTo="20"/>
+					<VBox justifyContent="Center" alignItems="Center">
+						<Button
+							text="{i18n>buyOne}"
+							type="Emphasized"
+							press=".onBuy"
+							width="80vw"
+							class="button"/>
+						<Button
+							text="{i18n>buyMultiple}"
+							press=".onOpenPurchaseDialog"
+							width="80vw"
+							class="button"/>
+					</VBox>
+				</VBox>
+			</VBox>
+		</Page>
+	</App>
+</mvc:View>
