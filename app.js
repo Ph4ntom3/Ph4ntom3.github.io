@@ -27,9 +27,9 @@ Promise.all([
     model = JSON.parse(data[0]);
     config = JSON.parse(data[1]);
 
-    console.log(JSON.stringify(model, 3));
+    const PORT = process.env.PORT || config.odata.port
 
-    const server = ODataServer("http://localhost:" + config.odata.port)
+    const server = ODataServer("https://fritz-friends-backend.herokuapp.com/:" + PORT)
     .model(model)
     .cors("*")
 
@@ -41,7 +41,7 @@ Promise.all([
         server.adapter(Adapter(cb => cb(err, db.db("fritz-friends"))));
     });
 
-    http.createServer(server.handle.bind(server)).listen(config.odata.port);
+    http.createServer(server.handle.bind(server)).listen(PORT);
 
     console.log(`started server on port ${config.odata.port}`);
 }).catch(err => {
