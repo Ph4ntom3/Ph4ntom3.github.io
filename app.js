@@ -47,5 +47,5 @@ Promise.all([
 
     console.log(`started server on port ${config.odata.port}`);
 }).catch(err => {
-    console.log(`Could not read config files:\n\n${err.name}:\n${err.message}`);
+    console.log(`Could not read config files:\n\n${err.name}:\n${err.message}\n${err.stack}`);
 })
