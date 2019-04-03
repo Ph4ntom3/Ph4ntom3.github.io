@@ -12,7 +12,7 @@
         },
         "dataSources": {
             "FritzFriendsSrv": {
-                "uri": "/sap/opu/odata/sap/Z_ROETHER_FRITZ_FRIENDS_SRV/",
+                "uri": "https://fritz-friends-backend.herokuapp.com/",
                 "type": "OData",
                 "settings": {
                     "odataVersion": "2.0"

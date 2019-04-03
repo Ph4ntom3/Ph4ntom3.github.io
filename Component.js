@@ -27,7 +27,7 @@ sap.ui.define([
             UIComponent.prototype.init.apply(this, arguments);
 
             // Set OData-Model
-            var oDataUser = new ODataModel(ODATA_SERVICE_URL + "UserSet", {
+            /*var oDataUser = new ODataModel(ODATA_SERVICE_URL + "UserSet", {
                 json: true
             });
             var oDataTransaction = new ODataModel(ODATA_SERVICE_URL + "TransactionSet", {
@@ -35,7 +35,7 @@ sap.ui.define([
             });
             
             this.getView().setModel(oDataUser);
-            this.getView().setModel(oDataTransaction);
+            this.getView().setModel(oDataTransaction);*/
         }
     });
 });
