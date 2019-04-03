@@ -1,0 +1,23 @@
+{
+  "name": "fritz_friends_backend",
+  "version": "1.0.0",
+  "description": "A backend to the web app fritz_friends for presentational purposes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo starting server... && node app && echo shut down server"
+  },
+  "author": "Nicholas Roether",
+  "license": "ISC",
+  "dependencies": {
+    "methods": "^1.1.2",
+    "mongodb": "^3.2.2",
+    "mongodb-core": "^3.2.2",
+    "odata-parser": "^1.4.1",
+    "path-to-regexp": "^3.0.0",
+    "safe-buffer": "^5.1.2",
+    "simple-odata-server": "^1.1.1",
+    "simple-odata-server-mongodb": "^1.0.0",
+    "xmlbuilder": "^12.0.0"
+  }
+}
