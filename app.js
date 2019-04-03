@@ -43,7 +43,7 @@ Promise.all([
 
     http.createServer(server.handle.bind(server)).listen(PORT);
 
-    console.log(`started server on port ${port}`);
+    console.log(`started server on port ${PORT}`);
 }).catch(err => {
-    console.log(`Could not read config files:\n\n${err.name}:\n${err.message}\n${err.stack}`);
+    console.log(`Error during startup:\n\n${err.name}:\n${err.message}\n${err.stack}`);
 })
