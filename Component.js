@@ -1,5 +1,6 @@
 "use strict";
 
+const ODATA_SERVICE_URL = "https://fritz-friends-backend.herokuapp.com/";
 
 sap.ui.define([
     "sap/ui/core/UIComponent",
@@ -26,7 +27,15 @@ sap.ui.define([
             UIComponent.prototype.init.apply(this, arguments);
 
             // Set OData-Model
-
+            var oDataUser = new ODataModel(ODATA_SERVICE_URL + "UserSet", {
+                json: true
+            });
+            var oDataTransaction = new ODataModel(ODATA_SERVICE_URL + "TransactionSet", {
+                json: true
+            });
+            
+            this.getView().setModel(oDataUser);
+            this.getView().setModel(oDataTransaction);
         }
     });
 });

@@ -1,4 +1,7 @@
 "use strict";
+
+const USERNAME = "test-user"
+
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageBox",
@@ -8,7 +11,7 @@ sap.ui.define([
     return Controller.extend("fritz_friends.view.app", {
         purchaseRequest(count) {
             return new Promise((res, rej) => {
-                this.getView().getModel().read("/NutzerSet('_current')", {
+                this.getView().getModel().read(`/UserSet('${USERNAME}')`, {
                     success(oData) {
                         if(oData.Diet.getTime() > Date.now())
                             rej("Nice try ;)");
@@ -17,8 +20,8 @@ sap.ui.define([
                         rej(oError.message);
                     }
                 })
-                this.getView().getModel().create("/TransaktionSet", {
-                    Uname: "_current",
+                this.getView().getModel().create("/TransactionSet", {
+                    Uname: USERNAME,
                     Pcount: count
                 }, {
                     success(oData) {
@@ -53,7 +56,7 @@ sap.ui.define([
         dietRequest(days) {
             return new Promise((res, rej) => {
                 let timestamp = Date.now() + days * 86400000;
-                this.getView().getModel().update("/NutzerSet('_current')", {
+                this.getView().getModel().update(`/UserSet('${USERNAME}')`, {
                     Diet: `/Date(${timestamp})/`
                 }, {
                     success(oData) {
@@ -100,7 +103,7 @@ sap.ui.define([
                 this.getView().addDependent(this.dietDialog = res[0]);
                 this.getView().addDependent(this.purchaseDialog = res[1]);
 
-                this.getView().bindElement("/NutzerSet('_current')");
+                this.getView().bindElement(`/UserSet('${USERNAME}')`);
             }
 
             this.getView().setModel(new JSONModel({
